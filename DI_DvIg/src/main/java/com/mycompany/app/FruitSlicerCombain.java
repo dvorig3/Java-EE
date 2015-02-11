@@ -6,15 +6,20 @@ public class FruitSlicerCombain extends FruitSlicer{
 
 	private Map<String, IFruit> sliceConveyor;
 	
+	@SuppressWarnings("unchecked")
 	public FruitSlicerCombain(){
-		
+		super();
+		sliceConveyor = (Map<String, IFruit>) StaticInfo.SERVICE_CONTEXT.getBean("initCWP");
 	}
 	
+	@SuppressWarnings("unchecked")
 	public FruitSlicerCombain(IFruit k){
 		super(k);
+		sliceConveyor = (Map<String, IFruit>) StaticInfo.SERVICE_CONTEXT.getBean("initCWP");
 	}
 	
 	public FruitSlicerCombain(Map<String, IFruit> conv){
+		super();
 		setSliceConveyor(conv);
 	}
 	
