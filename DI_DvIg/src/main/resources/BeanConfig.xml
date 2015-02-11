@@ -5,4 +5,6 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     
+    <bean id = "id" class = "com.mycompany.app.UnknownFruit"></bean>
+    
 </beans>
