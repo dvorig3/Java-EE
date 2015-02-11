@@ -25,4 +25,25 @@
 		<property name="fruit" ref="orange" />
 	</bean>
 
+	<util:map id="fruitMap" map-class="java.util.HashMap">
+		<entry key="apple" value-ref="apple" />
+		<entry key="orange" value-ref="orange" />
+		<entry key="melon" value-ref="melon" />
+	</util:map>
+	<bean id="frSlComNoArgs" class="com.mycompany.app.FruitSlicerCombain" />
+
+	<bean id="frSlComFruitArgs" class="com.mycompany.app.FruitSlicerCombain">
+		<constructor-arg ref="melon" />
+	</bean>
+
+	<bean id="frSlComMapArgs" class="com.mycompany.app.FruitSlicerCombain">
+		<constructor-arg ref="fruitMap" />
+	</bean>
+
+	<bean id="frSlComProp" class="com.mycompany.app.FruitSlicerCombain">
+		<property name="fruit" ref="melon" />
+		<property name="sliceConveyor" ref="fruitMap" />
+
+	</bean>
+
 </beans>

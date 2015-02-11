@@ -24,11 +24,11 @@ public class FruitSlicerCombain extends FruitSlicer{
 	}
 	
 	public void multySlice() {
-		System.out.println("Preparing fruit salad : ");
+		System.out.println(">> Preparing fruit salad : ");
 		for(String s: sliceConveyor.keySet()){
-			System.out.println("Slicing "+sliceConveyor.get(s).getName());
+			System.out.println(">>> Slicing "+sliceConveyor.get(s).getName());
 		}
-		System.out.println("Ready!!!");
+		System.out.println(">> Ready!!!");
 	}
 
 	public Map<String, IFruit> getSliceConveyor() {

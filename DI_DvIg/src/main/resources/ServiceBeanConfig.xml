@@ -10,9 +10,7 @@
 	<bean id="unknfr" class="com.mycompany.app.UnknownFruit" scope="prototype" />
 
 	<util:map id="initCWP" map-class="java.util.HashMap">
-		<entry key="1 unknownFruit" value-ref="unknfr" />
-		<entry key="2 unknownFruit" value-ref="unknfr" />
-		<entry key="3 unknownFruit" value-ref="unknfr" />
+		<entry key="unknownFruit" value-ref="unknfr" />
 	</util:map>
 
 </beans>
