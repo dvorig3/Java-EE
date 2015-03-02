@@ -1,33 +1,47 @@
 package com.mycompany.app;
 
+import javax.validation.constraints.NotNull;
+import static com.mycompany.app.StaticInfo.*; 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class FruitSlicer implements ISlicer {
 
+	@NotNull
+	@Qualifier(QUALIFIER_COMPONENT_FRUIT)
+	@Autowired
 	private IFruit fruit;
 
 	public FruitSlicer() {
-		setFruit((IFruit) StaticInfo.SERVICE_CONTEXT.getBean("unknfr"));
+		System.out.println("  ... calling FruitSlicer()");
+		setFruit((IFruit) SERVICE_CONTEXT.getBean("unknfr"));
 	}
 
-	public FruitSlicer(IFruit fruit) {
-		if (fruit == null)
-			setFruit((IFruit) StaticInfo.SERVICE_CONTEXT.getBean("unknfr"));
-		else
-			setFruit(fruit);
+	public FruitSlicer(@NotNull IFruit fruit) {
+		System.out.println("  ... calling FruitSlicer(fruit)");
+		setFruit(fruit);
 	}
 
 	public void slice() {
+		System.out.println("  ... calling slice()");
 		System.out.println(">> Slicing " + fruit.getName());
 	}
 
 	public void multySlice() {
-		System.out.println(">> !!! This slicer does not support multy slicing !!!");
+		System.out.println("  ... calling multySlice()");
+		System.out
+				.println(">> !!! This slicer does not support multy slicing !!!");
 	}
 
 	public IFruit getFruit() {
+		System.out.println("  ... calling getFruit()");
 		return fruit;
 	}
 
-	public void setFruit(IFruit fruit) {
+	public void setFruit(@NotNull IFruit fruit) {
+		System.out.println("  ... calling setFruit()");
 		this.fruit = fruit;
 	}
 
