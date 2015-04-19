@@ -16,12 +16,12 @@ public class FruitSlicer implements ISlicer {
 
 	public FruitSlicer() {
 		System.out.println("  ... calling FruitSlicer()");
-		setFruit((IFruit) SERVICE_CONTEXT.getBean("unknfr"));
+		setwFruit((IFruit) SERVICE_CONTEXT.getBean("unknfr"));
 	}
 
 	public FruitSlicer(@NotNull IFruit fruit) {
 		System.out.println("  ... calling FruitSlicer(fruit)");
-		setFruit(fruit);
+		setwFruit(fruit);
 	}
 
 	public void slice() {
@@ -40,7 +40,7 @@ public class FruitSlicer implements ISlicer {
 		return fruit;
 	}
 
-	public void setFruit(@NotNull IFruit fruit) {
+	public void setwFruit(@NotNull IFruit fruit) {
 		System.out.println("  ... calling setFruit()");
 		this.fruit = fruit;
 	}
